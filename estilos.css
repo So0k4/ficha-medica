@@ -115,6 +115,7 @@ button#cerrarBtn:hover {
     padding: 15px;
     min-height: 40px;
 }
+
 .buscar-contenedor {
     display: flex;
     justify-content: center;
@@ -128,4 +129,3 @@ button#cerrarBtn:hover {
         padding: 15px;
     }
 }
-
