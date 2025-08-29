@@ -5,26 +5,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const buscarApellido = document.getElementById('buscarApellido');
     const resultados = document.getElementById('resultados');
 
-    // Función para obtener registros desde localStorage
+    // Persistencia local de registros para simular almacenamiento
     function obtenerRegistros() {
         return JSON.parse(localStorage.getItem('fichasMedicas')) || [];
     }
 
-    // Función para guardar registros en localStorage
     function guardarRegistros(registros) {
         localStorage.setItem('fichasMedicas', JSON.stringify(registros));
     }
 
-    // Validación simple de RUT chileno (puedes mejorarla si quieres)
+    // Validación de formato RUT chileno
     function validarRut(rut) {
         return /^[0-9]{1,2}\.?[0-9]{3}\.?[0-9]{3}-[0-9kK]{1}$/.test(rut);
     }
 
-    // Evento guardar
     form.addEventListener('submit', function(e) {
         e.preventDefault();
 
-        // Obtener datos del formulario
         const ficha = {
             rut: form.rut.value.trim(),
             nombres: form.nombres.value.trim(),
@@ -38,7 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
             comentarios: form.comentarios.value.trim()
         };
 
-        // Validaciones básicas
         if (!validarRut(ficha.rut)) {
             alert('Ingrese un RUT válido (Ej: 12.345.678-9)');
             form.rut.focus();
@@ -68,12 +64,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Evento cerrar
     cerrarBtn.addEventListener('click', () => {
-        window.location.href = "https://www.google.com"; // Cambia la URL si lo deseas
+        window.location.href = "https://www.google.com";
     });
 
-    // Evento buscar
     buscarBtn.addEventListener('click', () => {
         const apellido = buscarApellido.value.trim().toLowerCase();
         const registros = obtenerRegistros();
@@ -81,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
         mostrarResultados(encontrados);
     });
 
-    // Mostrar resultados de búsqueda
+    // Presentación de resultados de búsqueda en tabla
     function mostrarResultados(lista) {
         if (lista.length === 0) {
             resultados.innerHTML = "<p>No se encontraron registros.</p>";
