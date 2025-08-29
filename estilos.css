@@ -1,0 +1,124 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f4f6fb;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+form {
+    background: #fff;
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 30px 40px 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(44, 62, 80, 0.08);
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #34495e;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 5px;
+    font-size: 1em;
+    background: #f9fafb;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #4f8cff;
+    outline: none;
+    background: #fff;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    margin-top: 20px;
+    margin-right: 10px;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 5px;
+    background: #4f8cff;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button[type="reset"] {
+    background: #e1e4ea;
+    color: #34495e;
+}
+
+button[type="button"]#cerrarBtn {
+    background: #ff5c5c;
+}
+
+button:hover {
+    background: #2563eb;
+    color: #fff;
+}
+
+button[type="reset"]:hover {
+    background: #cfd8dc;
+}
+
+button#cerrarBtn:hover {
+    background: #c0392b;
+}
+
+#buscarApellido {
+    width: 250px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #d1d5db;
+    margin-right: 10px;
+    font-size: 1em;
+}
+
+#resultados {
+    max-width: 500px;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.06);
+    padding: 15px;
+    min-height: 40px;
+}
+
+@media (max-width: 600px) {
+    form, #resultados {
+        max-width: 95vw;
+        padding: 15px;
+    }
+}
